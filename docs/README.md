@@ -52,7 +52,7 @@ w stronach nie jest bezwzględny, więc działa w obu układach.
 - **Numer wersji** występuje w obu plikach `index.html` (nagłówek sekcji pobierania,
   karta „W skrócie”, stopka) oraz w sekcji „Co nowego”.
 - **Zrzuty ekranu** to zwykłe pliki PNG w `assets/img/screens/⟨język⟩/`; podmiana
-  pliku o tej samej nazwie wystarcza. Zrzuty pochodzą z wersji 1.3.0 uruchomionej na
+  pliku o tej samej nazwie wystarcza. Zrzuty pochodzą z wersji 1.4.0 uruchomionej na
   zestawie `data-example` z repozytorium kodu, w interfejsie polskim i angielskim
   (język wybiera się w konfiguracji, zakładka *Wygląd*).
 - **Adres wydań** (`https://github.com/krzysztofkaczor84/clinic/releases/latest`)
