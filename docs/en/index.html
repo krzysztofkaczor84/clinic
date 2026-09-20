@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>clinic — schedule and patient records for a massage therapy clinic</title>
+<meta name="description" content="clinic — a desktop application for the front desk of a therapeutic massage clinic: room and appointment schedule, patient records, working time log and printouts. Windows and Linux, data never leaves the workstation.">
+<meta name="author" content="Krzysztof Kaczor">
+<link rel="canonical" href="https://krzysztofkaczor84.github.io/clinic/en/">
+<link rel="alternate" hreflang="pl" href="https://krzysztofkaczor84.github.io/clinic/">
+<link rel="alternate" hreflang="en" href="https://krzysztofkaczor84.github.io/clinic/en/">
+<link rel="icon" href="../assets/img/favicon.ico" sizes="any">
+<link rel="icon" href="../assets/img/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="clinic — schedule and patient records for a massage therapy clinic">
+<meta property="og:description" content="Room and appointment schedule, patient records, working time log and printouts. One workstation, no cloud, Windows and Linux.">
+<meta property="og:image" content="https://krzysztofkaczor84.github.io/clinic/assets/img/clinic-splash.jpg">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+    <div class="wrap">
+        <a class="brand" href="#top">
+            <img src="../assets/img/clinic-icon-256.png" alt="">
+            <span>clinic<small>massage clinic</small></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#download">Download</a>
+            <a href="#licence">Licence</a>
+            <a href="#contact">Contact</a>
+            <span class="lang-switch">
+                <a href="../" hreflang="pl" lang="pl">PL</a>
+                <span class="is-active" aria-current="true">EN</span>
+            </span>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+
+<!-- ---------------------------------------------------------------- hero -- -->
+<section class="hero" id="top">
+    <div class="wrap">
+        <div class="hero-grid">
+            <div>
+                <span class="eyebrow">Version 1.3.0 · Windows and Linux</span>
+                <h1>Schedule and patient records for a massage therapy clinic</h1>
+                <p class="lede">
+                    <strong>clinic</strong> runs the front desk of a therapeutic massage clinic:
+                    the schedule of rooms and appointments, the patient records and the working
+                    time log of the therapists. It works on a single computer — no server,
+                    no cloud, no subscription. Patient data never leaves the workstation.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">Windows 10/11 · 64-bit</span>
+                    <span class="badge">Linux 64-bit</span>
+                    <span class="badge">No installer</span>
+                    <span class="badge">Polish / English UI</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="https://github.com/krzysztofkaczor84/clinic/releases/latest">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                        Download the latest release
+                    </a>
+                    <a class="btn btn-ghost" href="#features">See what it does</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <img class="app-icon" src="../assets/img/clinic-icon-256.png" alt="The clinic application icon">
+                <h2>At a glance</h2>
+                <dl>
+                    <dt>Made for</dt><dd>The clinic front desk</dd>
+                    <dt>Workstations</dt><dd>One, no network</dd>
+                    <dt>Storage</dt><dd>XML files on disk</dd>
+                    <dt>Licence</dt><dd>One computer</dd>
+                    <dt>Delivery</dt><dd>ZIP archive</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- --------------------------------------------------------------- about -- -->
+<section class="section" id="about">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="kicker">Why this program exists</span>
+            <h2>A clinic with several rooms does not fit into an ordinary calendar</h2>
+            <p>
+                The clinic works in slots — a morning one and an afternoon one — and each slot
+                has several rooms, each staffed by a different therapist. Every treatment is
+                followed by a mandatory turnaround, an appointment may not reach beyond its slot,
+                and at the end of the month somebody has to say who worked how many hours.
+                An office calendar keeps none of that; <strong>clinic</strong> knows these rules
+                and does not let them be broken.
+            </p>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M9 14v4M15 14v4"/></svg>
+                </div>
+                <h3>A schedule that knows the rules</h3>
+                <p>
+                    A day is divided into slots and a slot into rooms. The program watches the
+                    mandatory turnaround after a treatment, clashes in a room and in a patient's
+                    day, rooms taken out of service and closed days. Appointments are moved with
+                    the mouse, and a drop that is not allowed is shown while still dragging.
+                </p>
+            </article>
+            <article class="card">
+                <div class="card-icon coral">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg>
+                </div>
+                <h3>Patient records at the desk</h3>
+                <p>
+                    Search by any fragment of any field, a journal of contraindications,
+                    a register of unexcused absences and a warning note — all visible before an
+                    appointment is saved. The visit history and a quick booking of the next
+                    appointment sit right in the patient card.
+                </p>
+            </article>
+            <article class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </div>
+                <h3>Working time that counts itself</h3>
+                <p>
+                    Starting and finishing a slot opens and closes a log entry for every staffed
+                    room. A change of staffing in the middle of a slot splits the time between
+                    two people, corrections leave a trace, and the working time card and the
+                    summary go straight to paper or to PDF.
+                </p>
+            </article>
+        </div>
+
+        <dl class="facts mt-l">
+            <div><dt>1</dt><dd>workstation — no server, no cloud, no subscription</dd></div>
+            <div><dt>0</dt><dd>patient records sent anywhere over the internet</dd></div>
+            <div><dt>3 h</dt><dd>default interval of the automatic backups</dd></div>
+            <div><dt>PL / EN</dt><dd>interface language chosen on the workstation</dd></div>
+        </dl>
+    </div>
+</section>
+
+<!-- ------------------------------------------------------------ features -- -->
+<section class="section section-alt" id="features">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="kicker">Functionality</span>
+            <h2>What the program does</h2>
+            <p>
+                The screenshots below come from version 1.3.0 running on a sample, entirely
+                invented set of data. Click a screenshot to enlarge it.
+            </p>
+        </div>
+
+        <!-- 1. calendar -->
+        <div class="feature stacked">
+            <div class="feature-text">
+                <span class="tag">Calendar</span>
+                <h3>The schedule of rooms and appointments</h3>
+                <p>
+                    The main column is a day, the subcolumns are rooms and the rows are work
+                    slots. The height of a slot matches its length, so it is visible how much
+                    room time is really left.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Three spans</strong> — a day, several days (2–6) and a week (5 or 7 days), switched with one click or a shortcut.</li>
+                    <li><strong>The staffing heading</strong> above every room names everybody who worked in it during the slot; finished shifts are struck through and the colour comes from the therapist catalogue.</li>
+                    <li><strong>An appointment tile</strong> shows the time, the patient and the treatment, and once completed also the therapist; the colour follows the status and the turnaround is drawn as a separate bar.</li>
+                    <li><strong>Mouse work</strong> — selecting empty space creates an appointment, dragging moves it between hours, rooms and days, and the bottom edge changes its length.</li>
+                    <li><strong>Filters and scaling</strong> — hide statuses and rooms, zoom vertically and horizontally, print exactly what is on the screen.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>clinic — day view, ten rooms in two slots</span></div>
+                    <img src="../assets/img/screens/en/calendar-day.png" alt="Calendar view: one day, ten rooms, appointment tiles in two slots" loading="lazy" width="1400" height="827">
+                </div>
+                <figcaption>The day view — room staffing, appointments and turnaround bars.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 2. booking -->
+        <div class="feature reverse">
+            <div class="feature-text">
+                <span class="tag">Booking</span>
+                <h3>Finding free times</h3>
+                <p>
+                    The booking window takes a patient, a treatment, the number of treatments
+                    and a date range, and lists every time at which the treatment
+                    <em>together with its turnaround</em> fits. The ticked times become
+                    appointments with a single button.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>A series of appointments</strong> — the “ticked k of N” counter makes sure the patient leaves with a full set, and clashes with their other appointments are blocked as they are ticked.</li>
+                    <li><strong>Free rooms beside every time</strong> — either leave the choice to the program or pick a room by hand.</li>
+                    <li><strong>A therapist criterion</strong> — when the patient asks for somebody in particular, the result narrows down to the rooms those people staff.</li>
+                    <li><strong>Warnings before saving</strong> — the patient's contraindications, the untrusted mark and the months that have no schedule yet.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Book appointments</span></div>
+                    <img src="../assets/img/screens/en/booking.png" alt="The booking window with a list of free times and rooms" loading="lazy" width="560" height="860">
+                </div>
+                <figcaption>The booking window — free times with the rooms to choose from.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 3. patients -->
+        <div class="feature">
+            <div class="feature-text">
+                <span class="tag">Patients</span>
+                <h3>Patient records</h3>
+                <p>
+                    The patient card holds the personal and address data, administrative notes,
+                    the journal of contraindications, referrals and consents, the register of
+                    absences and the full visit history.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>One search field</strong> — first name, surname, record number, national ID, phone, e-mail or address; matching ignores letter case and Polish diacritics.</li>
+                    <li><strong>Contraindications as a journal</strong> — dated entries added one after another, never overwritten, with the warning already visible when the patient is picked.</li>
+                    <li><strong>Patient trust</strong> — unexcused absences are counted against a threshold; an untrusted patient is marked with a colour and an “(!)” everywhere they appear.</li>
+                    <li><strong>Anonymisation on request (GDPR)</strong> — the personal data goes, the record number and the visit history stay.</li>
+                    <li><strong>The record number</strong> is assigned automatically and never reused.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Patient card — visit history</span></div>
+                    <img src="../assets/img/screens/en/patient-history.png" alt="The patient card with the visit history tab" loading="lazy" width="1100" height="540">
+                </div>
+                <figcaption>The patient card — record, contraindications, absences and visit history.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 4. appointments -->
+        <div class="feature reverse">
+            <div class="feature-text">
+                <span class="tag">Appointments</span>
+                <h3>From booking to settlement</h3>
+                <p>
+                    An appointment goes through its statuses: planned, confirmed, completed or
+                    cancelled. A therapist reaches the appointment only when it is marked as
+                    completed — and it is the person who was in the room at the moment the
+                    treatment started.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>The appointment form</strong> with the length, the turnaround, the room, an administrative note and the invoice markers.</li>
+                    <li><strong>Cancelling with a reason</strong> and a “patient did not show up” box that feeds the register of absences.</li>
+                    <li><strong>Bulk completion</strong> of a whole slot once it has finished.</li>
+                    <li><strong>The call list</strong> — the appointments of a chosen day that nobody has confirmed yet, with phone numbers and confirmation right in the list.</li>
+                    <li><strong>Invoices</strong> — the program issues none, it only keeps track of the ones a patient has not collected yet.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Appointments to call about</span></div>
+                    <img src="../assets/img/screens/en/call-list.png" alt="The list of appointments to call about with patient phone numbers" loading="lazy" width="860" height="560">
+                </div>
+                <figcaption>The call list — one day ahead, with a phone number on every line.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 5. working time -->
+        <div class="feature">
+            <div class="feature-text">
+                <span class="tag">Working time</span>
+                <h3>Room staffing and the hours log</h3>
+                <p>
+                    Counting starts the moment a slot is started and ends when it is closed —
+                    by hand or automatically. Every change of staffing closes one entry and
+                    opens the next, so the log describes presence in a room rather than a plan.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Staffing suggestions</strong> from the last staffed day or from the same weekday — to be confirmed, not guessed.</li>
+                    <li><strong>Substitutions and moves</strong> of staffing between rooms, with a single cutoff time and no gap in the log.</li>
+                    <li><strong>Corrections and manual entries</strong> — each of them marked, with the original hours kept.</li>
+                    <li><strong>A summary</strong> per person: days, staffed slots, total hours and lesson hours.</li>
+                    <li><strong>CSV export</strong> plus the printed working time card and the summary of the period.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Working time log</span></div>
+                    <img src="../assets/img/screens/en/worktime.png" alt="The working time log with entries and the total of the range" loading="lazy" width="1080" height="660">
+                </div>
+                <figcaption>The working time log — entries, correction marks and the total.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 6. printouts -->
+        <div class="feature reverse">
+            <div class="feature-text">
+                <span class="tag">Printouts</span>
+                <h3>Reports for paper, for PDF or for the patient</h3>
+                <p>
+                    One menu gathers every printout and one print window serves them all: paper,
+                    orientation, scaling, font size, date range and a page-by-page preview.
+                    The settings are remembered separately for each kind of report.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>The patient's appointment card</strong> — dates and times only, without the room, the therapist or any note; it fits on A6.</li>
+                    <li><strong>The working time card</strong> of one therapist and the <strong>summary</strong> of a period — ready to be signed.</li>
+                    <li><strong>The daily admissions list</strong> — as one table or split into rooms.</li>
+                    <li><strong>The room staffing plan</strong>, the <strong>patient record</strong> and the <strong>calendar as it is shown</strong> on the screen.</li>
+                    <li><strong>PDF export</strong> for every report; internal printouts are clearly marked as such.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Print — daily admissions</span></div>
+                    <img src="../assets/img/screens/en/print-dialog.png" alt="The print window with a preview of the daily admissions list" loading="lazy" width="1080" height="660">
+                </div>
+                <figcaption>The print window with its preview — the same settings for every report.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 7. settings -->
+        <div class="feature">
+            <div class="feature-text">
+                <span class="tag">Settings</span>
+                <h3>Catalogues and the clinic configuration</h3>
+                <p>
+                    The program imposes no fixed numbers: the count of rooms and their names,
+                    the default slots of every weekday, the list of treatments and of therapists
+                    are all set by the clinic.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Therapists</strong> with their calendar colour, phone, active state and absences (holiday, sick leave).</li>
+                    <li><strong>Treatments</strong> with a length, a short name and an informative price.</li>
+                    <li><strong>Seven tabs of settings</strong> with a search field over them — from the clinic details to the status colours and the security rules.</li>
+                    <li><strong>Appearance</strong> — a light or dark theme or the one of the system, the widget style and the interface language (Polish or English).</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Settings — the Appearance tab</span></div>
+                    <img src="../assets/img/screens/en/settings-appearance.png" alt="The settings window, appearance tab with status colours and the language choice" loading="lazy" width="1088" height="757">
+                </div>
+                <figcaption>Settings — calendar scale, status colours, theme and language.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 8. data safety -->
+        <div class="feature reverse">
+            <div class="feature-text">
+                <span class="tag coral">Data and safety</span>
+                <h3>Backups, the change log and GDPR</h3>
+                <p>
+                    The data lives in XML files in the data directory — no SQL database and no
+                    server. The program takes care of the copies itself, and of being able to
+                    answer the question “who did this?”.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Backups</strong> automatically at start, periodically during work and — when set so — on exit; restoring from a list of copies, with a copy of the current state taken first.</li>
+                    <li><strong>The change log</strong> — date, user, kind of operation and record, with filters; it never holds the value from before a change, so that a second set of patient data cannot arise.</li>
+                    <li><strong>User accounts</strong> with an optional password — they attribute operations to a person rather than guard access.</li>
+                    <li><strong>A screen lock</strong> on <kbd>Ctrl</kbd>+<kbd>L</kbd> and after a period of inactivity.</li>
+                    <li><strong>GDPR</strong> — contraindications treated as a special category of data, anonymisation of a patient and of a therapist, and no patient data outside the data directory and its backups.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Change log</span></div>
+                    <img src="../assets/img/screens/en/changelog.png" alt="The change log window with filters and a list of operations" loading="lazy" width="1168" height="560">
+                </div>
+                <figcaption>The change log — who performed which operation, and when.</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------------------------------------------- gallery -- -->
+<section class="section" id="gallery">
+    <div class="wrap">
+        <div class="section-head center">
+            <span class="kicker">Gallery</span>
+            <h2>The remaining windows</h2>
+            <p>Click a screenshot to see it in full size.</p>
+        </div>
+
+        <div class="gallery">
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/calendar-week.png" alt="The week view with several days and rooms" loading="lazy">
+                </div>
+                <figcaption>The week view — five days and every room at once.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/appointment.png" alt="The appointment form with a warning about an untrusted patient" loading="lazy">
+                </div>
+                <figcaption>The appointment form — statuses, note and invoice markers.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/patient-card.png" alt="The patient card with personal data and notes" loading="lazy">
+                </div>
+                <figcaption>The patient card — data, address and administrative notes.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/worktime-summary.png" alt="The working time summary per therapist" loading="lazy">
+                </div>
+                <figcaption>The log summary — days, staffed slots and total hours.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/therapists.png" alt="The therapist catalogue" loading="lazy">
+                </div>
+                <figcaption>The therapist catalogue — calendar colour and state.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/menu-reports.png" alt="The open Reports menu in the main window" loading="lazy">
+                </div>
+                <figcaption>The Reports menu — every printout in one place.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/settings.png" alt="The settings window, Clinic tab" loading="lazy">
+                </div>
+                <figcaption>Settings — clinic details, default slots and rooms.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/help.png" alt="The built-in help of the program" loading="lazy">
+                </div>
+                <figcaption>The built-in help — topics and search (the manual is written in Polish).</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="../assets/img/screens/en/login.png" alt="The sign-in window with the list of accounts" loading="lazy">
+                </div>
+                <figcaption>Signing in — the account names the author of every operation.</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------------------------------------------ download -- -->
+<section class="section section-alt" id="download">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="kicker">Download</span>
+            <h2>Installing means unpacking an archive</h2>
+            <p>
+                Releases are published in GitHub Releases as ZIP archives — one for Windows and
+                one for Linux. There is no installer, no administrator rights are needed, and
+                the program runs from any directory it may write to.
+            </p>
+        </div>
+
+        <div class="download-grid">
+            <div class="download-card">
+                <h3>The latest release</h3>
+                <p class="muted small">Current version: <strong>1.3.0</strong></p>
+                <a class="btn btn-solid" href="https://github.com/krzysztofkaczor84/clinic/releases/latest">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                    Go to the releases on GitHub
+                </a>
+                <ul class="platform-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4v7.5H3V5.5Zm0 13L10.5 20v-7.5H3v6ZM11.5 3.8 21 2v9.5h-9.5V3.8Zm0 16.4L21 22v-9.5h-9.5v7.7Z"/></svg>
+                        <span><b>Windows 10 / 11 · 64-bit</b><span>A ZIP archive with the Qt libraries and the MSVC runtime</span></span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        <span><b>Linux · 64-bit</b><span>Built on Ubuntu 22.04; HTTPS uses the system OpenSSL 3</span></span>
+                    </li>
+                </ul>
+                <p class="small muted mt-m mb-0">
+                    Inside the archive: the <code>clinic</code> program, the updater, the Qt
+                    libraries, the translations, the manual in
+                    <code>doc/clinic-manual.pdf</code> and the <code>licenses/</code> directory
+                    with the licence texts of the components.
+                </p>
+            </div>
+
+            <div class="download-card">
+                <h3>The first run</h3>
+                <ol class="steps">
+                    <li><strong>Unpack the archive</strong> into a directory the program may write to — for example <code>C:\clinic</code> or your home directory.</li>
+                    <li><strong>Start <code>clinic</code></strong>. On the first run it asks for the licence key; without one it starts in read-only mode.</li>
+                    <li><strong>Sign in</strong> with any name — the account is created straight away and signs every operation from then on.</li>
+                    <li><strong>Set up the clinic</strong> — its name, the rooms and the default slots in the settings window, then enter the therapists and the treatments.</li>
+                    <li><strong>Create the schedule of the month</strong> (the <em>Schedule</em> menu) and start booking appointments.</li>
+                </ol>
+                <div class="notice info">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg>
+                    <p>
+                        <strong>Updates are built in.</strong> The program checks a signed
+                        manifest, downloads the archive, verifies its checksum and installs it
+                        with a separate updater — after a backup has been made and with the
+                        previous version still available to return to. The clinic data, the
+                        settings and the licence are left untouched.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="split mt-l">
+            <div class="card">
+                <h3>Requirements</h3>
+                <ul>
+                    <li>64-bit Windows 10 or 11, or 64-bit Linux (glibc 2.35+, e.g. Ubuntu 22.04 and newer).</li>
+                    <li>A screen of at least 1366 × 768; HiDPI scaling is supported.</li>
+                    <li>Room for the data and the backups — tens of megabytes at a typical volume.</li>
+                    <li>An internet connection only to fetch the licence and the updates; work without a network is possible thanks to the offline copy of the licence.</li>
+                    <li>No server requirements at all — no database, no background service.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>New in 1.3.0</h3>
+                <ul>
+                    <li><strong>Substitutions</strong> in the staffing heading — the replaced person stays visible and their working time in that room is zero.</li>
+                    <li><strong>A room to pick</strong> beside every time found in the booking window.</li>
+                    <li><strong>A therapist filter</strong> when searching for free times.</li>
+                    <li><strong>The widget style</strong> can be chosen in the settings, next to the theme and the language.</li>
+                    <li>Fixes in the context menus of the calendar and in moving staffing between rooms.</li>
+                </ul>
+                <p class="small muted mb-0">The full list of changes is in the release notes on GitHub.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------------------------------------------- licence -- -->
+<section class="section" id="licence">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="kicker">Licensing</span>
+            <h2>The application licence and the third party components</h2>
+            <p>
+                The program is commercial software of its author and needs a valid licence to
+                work in full. The libraries it uses are a separate matter — their licence texts
+                are delivered with every release.
+            </p>
+        </div>
+
+        <div class="split">
+            <div class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                </div>
+                <h3>The application licence</h3>
+                <p>
+                    The licence is a <strong>digitally signed file</strong> (Ed25519),
+                    downloaded from the licence server over HTTPS at every start and kept on the
+                    workstation as an offline copy. It names the licensee, the edition, the
+                    period of validity and the <strong>computer</strong> the program may run on.
+                </p>
+                <ul>
+                    <li><strong>One licence = one computer.</strong> The computer id is derived at every start and is never written to a file.</li>
+                    <li><strong>Working offline</strong> is possible — the program then uses the offline copy of the licence.</li>
+                    <li><strong>Without a valid licence</strong> the program starts in <strong>read-only mode</strong>: the data can be viewed, printed, exported and backed up, but not changed.</li>
+                    <li><strong>Updates work regardless</strong> of the state of the licence.</li>
+                    <li>Replacing the computer means issuing the licence for the new id.</li>
+                </ul>
+                <div class="notice mt-m">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16v12H4zM4 7l8 6 8-6"/></svg>
+                    <p>
+                        <strong>How to obtain a licence:</strong> open
+                        <em>Help → About</em>, copy the <em>computer id</em> with the button
+                        beside it and send it to
+                        <a href="mailto:krzysztof.kaczor.84@gmail.com">krzysztof.kaczor.84@gmail.com</a>.
+                        You will get back a licence key, which is entered in the program once.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon coral">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.4 8 9 4.6-.6 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <h3>Third party components</h3>
+                <p>
+                    Beyond Qt and the C++ standard library the program uses no external
+                    libraries. The licence texts are part of the release archive (the
+                    <code>licenses/</code> directory) and the About window names them.
+                </p>
+                <div class="table-wrap mt-m">
+                    <table>
+                        <thead>
+                            <tr><th>Component</th><th>Licence</th><th>Notes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Qt 6.11</td>
+                                <td>LGPL v3</td>
+                                <td>The libraries are linked <strong>dynamically</strong>, so that the recipient may replace them with their own build</td>
+                            </tr>
+                            <tr>
+                                <td>Monocypher 4.0.2</td>
+                                <td>CC0 1.0 / BSD 2-Clause</td>
+                                <td>Verifies the signature of the licence and of the update manifest</td>
+                            </tr>
+                            <tr>
+                                <td>OpenSSL 3 (Linux)</td>
+                                <td>Apache 2.0</td>
+                                <td>A system library; it is not shipped in the archive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="small muted mt-m mb-0">
+                    The text of the Qt licence is also available at
+                    <a href="https://www.qt.io/licensing" rel="noopener">qt.io/licensing</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="split mt-l">
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>About</span></div>
+                    <img src="../assets/img/screens/en/about.png" alt="The About window with the version, the contact, the Qt LGPL note and the computer id" loading="lazy">
+                </div>
+                <figcaption>The About window — version, the Qt LGPL note and the computer id.</figcaption>
+            </figure>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Licence</span></div>
+                    <img src="../assets/img/screens/en/license.png" alt="The licence window with the licensee, edition, validity and the state of the check" loading="lazy">
+                </div>
+                <figcaption>The licence window — its state and the last online check.</figcaption>
+            </figure>
+        </div>
+
+        <div class="notice info mt-l">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg>
+            <p>
+                <strong>Patient data stays on the workstation.</strong> The only network
+                connections the program makes are fetching the licence file and checking for
+                updates. No record, schedule or log entry is sent anywhere. Protecting the
+                computer itself belongs to the deployment: a password on the system account and
+                encryption of the disk and of the backup medium.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------------------------------------------- contact -- -->
+<section class="section section-alt" id="contact">
+    <div class="wrap">
+        <div class="section-head center">
+            <span class="kicker">Contact</span>
+            <h2>Questions, licences, reports</h2>
+        </div>
+        <div class="contact-card">
+            <img src="../assets/img/clinic-icon-256.png" alt="">
+            <div>
+                <h3>Krzysztof Kaczor — the author</h3>
+                <p>
+                    Licences, questions about a deployment, bug reports and suggestions reach me
+                    fastest at the address below. When reporting a problem, the
+                    <em>“Copy diagnostics”</em> button in the About window helps.
+                </p>
+                <a class="mail-link" href="mailto:krzysztof.kaczor.84@gmail.com">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    krzysztof.kaczor.84@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <figure class="shot mt-l" style="max-width:700px;margin-left:auto;margin-right:auto">
+            <div class="shot-frame">
+                <img src="../assets/img/screens/en/splash.png" alt="The splash screen of the clinic program" loading="lazy">
+            </div>
+            <figcaption class="center">The splash screen shown while the program starts.</figcaption>
+        </figure>
+    </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <h4>clinic</h4>
+                <p class="mb-0">
+                    An application for the schedule, the patient records and the working time log
+                    of a therapeutic massage clinic. Version 1.3.0.
+                </p>
+            </div>
+            <div>
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="https://github.com/krzysztofkaczor84/clinic/releases/latest">Latest release</a></li>
+                    <li><a href="#licence">Licensing</a></li>
+                    <li><a href="#download">Requirements and install</a></li>
+                    <li><a href="../" hreflang="pl" lang="pl">Wersja polska</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li>Krzysztof Kaczor</li>
+                    <li><a href="mailto:krzysztof.kaczor.84@gmail.com">krzysztof.kaczor.84@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Krzysztof Kaczor. All rights reserved.</span>
+            <span>Qt 6 under LGPL v3 · Monocypher under CC0 / BSD 2-Clause</span>
+        </div>
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot">
+    <button class="lightbox-close" type="button" aria-label="Close">×</button>
+    <figure>
+        <img alt="">
+        <figcaption></figcaption>
+    </figure>
+</div>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

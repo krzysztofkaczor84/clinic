@@ -1,13 +1,733 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <title>Clinic releases</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>clinic — grafik i kartoteka przychodni masażu leczniczego</title>
+<meta name="description" content="clinic — program na stanowisko rejestracji przychodni masażu leczniczego: grafik gabinetów i wizyt, kartoteka pacjentów, ewidencja czasu pracy i wydruki. Windows i Linux, dane wyłącznie na stanowisku.">
+<meta name="author" content="Krzysztof Kaczor">
+<link rel="canonical" href="https://krzysztofkaczor84.github.io/clinic/">
+<link rel="alternate" hreflang="pl" href="https://krzysztofkaczor84.github.io/clinic/">
+<link rel="alternate" hreflang="en" href="https://krzysztofkaczor84.github.io/clinic/en/">
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" href="assets/img/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="clinic — grafik i kartoteka przychodni masażu leczniczego">
+<meta property="og:description" content="Grafik gabinetów i wizyt, kartoteka pacjentów, ewidencja czasu pracy i wydruki. Jedno stanowisko, bez chmury, Windows i Linux.">
+<meta property="og:image" content="https://krzysztofkaczor84.github.io/clinic/assets/img/clinic-splash.jpg">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-    <h1>Clinic releases page</h1>
+<a class="skip" href="#main">Przejdź do treści</a>
 
-    <ul>
-        <li><a href="requirements.html">SW Requirements</a></li>
-    </ul>
+<header class="site-header">
+    <div class="wrap">
+        <a class="brand" href="#top">
+            <img src="assets/img/clinic-icon-256.png" alt="">
+            <span>clinic<small>przychodnia masażu</small></span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Nawigacja główna">
+            <a href="#o-programie">O programie</a>
+            <a href="#funkcje">Funkcje</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#pobieranie">Pobieranie</a>
+            <a href="#licencja">Licencja</a>
+            <a href="#kontakt">Kontakt</a>
+            <span class="lang-switch">
+                <span class="is-active" aria-current="true">PL</span>
+                <a href="en/" hreflang="en" lang="en">EN</a>
+            </span>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+
+<!-- ---------------------------------------------------------------- hero -- -->
+<section class="hero" id="top">
+    <div class="wrap">
+        <div class="hero-grid">
+            <div>
+                <span class="eyebrow">Wersja 1.3.0 · Windows i Linux</span>
+                <h1>Grafik i kartoteka przychodni masażu leczniczego</h1>
+                <p class="lede">
+                    <strong>clinic</strong> to program na stanowisko rejestracji: prowadzi grafik
+                    gabinetów i wizyt, kartotekę pacjentów oraz ewidencję czasu pracy osób
+                    masujących. Pracuje na jednym komputerze — bez serwera, bez chmury i bez
+                    abonamentu. Dane pacjentów nigdy nie opuszczają stanowiska.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge">Windows 10/11 · 64-bit</span>
+                    <span class="badge">Linux 64-bit</span>
+                    <span class="badge">Bez instalatora</span>
+                    <span class="badge">Interfejs PL / EN</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="https://github.com/krzysztofkaczor84/clinic/releases/latest">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                        Pobierz najnowsze wydanie
+                    </a>
+                    <a class="btn btn-ghost" href="#funkcje">Zobacz możliwości</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <img class="app-icon" src="assets/img/clinic-icon-256.png" alt="Ikona aplikacji clinic">
+                <h2>W skrócie</h2>
+                <dl>
+                    <dt>Zastosowanie</dt><dd>Rejestracja przychodni</dd>
+                    <dt>Stanowiska</dt><dd>Jedno, bez sieci</dd>
+                    <dt>Dane</dt><dd>Pliki XML na dysku</dd>
+                    <dt>Licencja</dt><dd>Na jeden komputer</dd>
+                    <dt>Dystrybucja</dt><dd>Archiwum ZIP</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- -------------------------------------------------------- o programie -- -->
+<section class="section" id="o-programie">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="kicker">Po co jest ten program</span>
+            <h2>Przychodnia z kilkoma gabinetami nie mieści się w zwykłym kalendarzu</h2>
+            <p>
+                Przychodnia pracuje w slotach — porannym i popołudniowym — a w każdym slocie
+                kilka gabinetów obsadzonych innymi osobami. Po każdym zabiegu gabinet musi mieć
+                czas na przygotowanie, wizyta nie może wyjść poza slot, a na koniec miesiąca
+                ktoś musi powiedzieć, kto ile godzin przepracował. Kalendarz biurowy tego nie
+                pilnuje — <strong>clinic</strong> zna te reguły i nie pozwala ich złamać.
+            </p>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M9 14v4M15 14v4"/></svg>
+                </div>
+                <h3>Grafik, który zna reguły</h3>
+                <p>
+                    Dzień dzieli się na sloty, slot na gabinety. Program pilnuje obowiązkowej
+                    przerwy po zabiegu, kolizji w gabinecie i u pacjenta, gabinetów wyłączonych
+                    z użytku i dni wolnych. Wizyty przenosi się myszą, a niedozwolone upuszczenie
+                    widać już w trakcie przeciągania.
+                </p>
+            </article>
+            <article class="card">
+                <div class="card-icon coral">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg>
+                </div>
+                <h3>Kartoteka pod ręką rejestracji</h3>
+                <p>
+                    Wyszukiwanie po dowolnym fragmencie danych, dziennik przeciwwskazań,
+                    rejestr nieobecności nieusprawiedliwionych i uwagi ostrzegawcze — widoczne
+                    zanim wizyta zostanie zapisana. Historia wizyt i szybkie umówienie kolejnej
+                    wprost z karty pacjenta.
+                </p>
+            </article>
+            <article class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </div>
+                <h3>Czas pracy liczony sam</h3>
+                <p>
+                    Rozpoczęcie i zakończenie slotu otwiera i zamyka wpisy ewidencji dla każdego
+                    obsadzonego gabinetu. Zmiana obsady w środku slotu dzieli czas między dwie
+                    osoby, korekty zostawiają ślad, a karta czasu pracy i zestawienie zbiorcze
+                    wychodzą na papier albo do PDF.
+                </p>
+            </article>
+        </div>
+
+        <dl class="facts mt-l">
+            <div><dt>1</dt><dd>stanowisko — bez serwera, bez chmury, bez abonamentu</dd></div>
+            <div><dt>0</dt><dd>danych pacjentów wysyłanych do internetu</dd></div>
+            <div><dt>3 h</dt><dd>domyślny odstęp automatycznych kopii zapasowych</dd></div>
+            <div><dt>PL / EN</dt><dd>język interfejsu wybierany na stanowisku</dd></div>
+        </dl>
+    </div>
+</section>
+
+<!-- ------------------------------------------------------------ funkcje -- -->
+<section class="section section-alt" id="funkcje">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="kicker">Funkcjonalność</span>
+            <h2>Co program potrafi</h2>
+            <p>
+                Poniższe zrzuty pochodzą z wersji 1.3.0 uruchomionej na przykładowym,
+                w pełni wymyślonym zestawie danych. Kliknij zrzut, aby go powiększyć.
+            </p>
+        </div>
+
+        <!-- 1. kalendarz -->
+        <div class="feature stacked">
+            <div class="feature-text">
+                <span class="tag">Kalendarz</span>
+                <h3>Grafik gabinetów i wizyt</h3>
+                <p>
+                    Kolumną główną jest dzień, podkolumnami gabinety, a wierszami sloty pracy.
+                    Wysokość slotu odpowiada jego długości, więc widać, ile czasu naprawdę
+                    zostało w gabinecie.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Trzy zakresy widoku</strong> — dzień, kilka dni (2–6) i tydzień (5 albo 7 dni), przełączane jednym kliknięciem lub skrótem.</li>
+                    <li><strong>Nagłówek obsady</strong> nad każdym gabinetem wymienia wszystkie osoby dyżurujące w slocie; zakończone dyżury są przekreślone, a kolor pochodzi ze słownika osób.</li>
+                    <li><strong>Kafelek wizyty</strong> pokazuje godzinę, pacjenta i zabieg, a po realizacji także osobę masującą; kolor zależy od statusu, przerwa po zabiegu rysowana jest osobnym paskiem.</li>
+                    <li><strong>Praca myszą</strong> — zaznaczenie pustego miejsca tworzy wizytę, przeciągnięcie przenosi ją między godzinami, gabinetami i dniami, a dolna krawędź zmienia czas trwania.</li>
+                    <li><strong>Filtry i skalowanie</strong> — ukrywanie statusów i gabinetów, powiększanie w pionie i w poziomie, wydruk dokładnie tego, co widać.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>clinic — widok dnia, dziesięć gabinetów w dwóch slotach</span></div>
+                    <img src="assets/img/screens/pl/calendar-day.png" alt="Widok kalendarza: jeden dzień, dziesięć gabinetów, kafelki wizyt w dwóch slotach" loading="lazy" width="1400" height="827">
+                </div>
+                <figcaption>Widok dnia — obsada gabinetów, wizyty i przerwy po zabiegach.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 2. umawianie -->
+        <div class="feature reverse">
+            <div class="feature-text">
+                <span class="tag">Umawianie</span>
+                <h3>Wyszukiwanie wolnych terminów</h3>
+                <p>
+                    Okno umawiania przyjmuje pacjenta, zabieg, liczbę zabiegów oraz zakres dat
+                    i pokazuje wszystkie terminy, w których zabieg <em>wraz z przerwą</em> się
+                    mieści. Zaznaczone terminy stają się wizytami jednym przyciskiem.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Seria wizyt</strong> — licznik „zaznaczono k z N” pilnuje, by pacjent wyszedł z kompletem terminów, a kolizje z jego innymi wizytami blokowane są od razu.</li>
+                    <li><strong>Wolne gabinety przy każdym terminie</strong> — można zdać się na automatyczny przydział albo wskazać gabinet ręcznie.</li>
+                    <li><strong>Kryterium osoby masującej</strong> — gdy pacjent prosi o kogoś konkretnego, wynik zawęża się do gabinetów obsadzonych przez wskazane osoby.</li>
+                    <li><strong>Ostrzeżenia przed zapisem</strong> — przeciwwskazania pacjenta, oznaczenie niezaufania i miesiące bez utworzonego grafiku.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Umawianie wizyt</span></div>
+                    <img src="assets/img/screens/pl/booking.png" alt="Okno umawiania wizyt z listą wolnych terminów i gabinetów" loading="lazy" width="560" height="860">
+                </div>
+                <figcaption>Okno umawiania wizyt — wolne terminy z gabinetami do wyboru.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 3. kartoteka -->
+        <div class="feature">
+            <div class="feature-text">
+                <span class="tag">Pacjenci</span>
+                <h3>Kartoteka pacjentów</h3>
+                <p>
+                    Karta pacjenta zbiera dane osobowe i adresowe, uwagi administracyjne,
+                    dziennik przeciwwskazań, skierowania i zgody, rejestr nieobecności oraz
+                    pełną historię wizyt.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Jedno pole wyszukiwania</strong> — imię, nazwisko, numer kartoteki, PESEL, telefon, e-mail lub adres; dopasowanie niewrażliwe na wielkość liter i polskie znaki.</li>
+                    <li><strong>Przeciwwskazania jako dziennik</strong> — kolejne wpisy z datą, bez nadpisywania wcześniejszych, z ostrzeżeniem widocznym już przy wyborze pacjenta.</li>
+                    <li><strong>Zaufanie pacjenta</strong> — nieobecności nieusprawiedliwione zliczane do progu; pacjent niezaufany oznaczany kolorem i znakiem „(!)” wszędzie, gdzie się pojawia.</li>
+                    <li><strong>Anonimizacja na żądanie (RODO)</strong> — dane osobowe znikają, a numer kartoteki i historia wizyt zostają.</li>
+                    <li><strong>Numer kartoteki</strong> nadawany automatycznie i nigdy nieużywany powtórnie.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Karta pacjenta — historia wizyt</span></div>
+                    <img src="assets/img/screens/pl/patient-history.png" alt="Karta pacjenta z zakładką historii wizyt" loading="lazy" width="1100" height="540">
+                </div>
+                <figcaption>Karta pacjenta — zakładki kartoteki, przeciwwskazań, nieobecności i historii wizyt.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 4. wizyty -->
+        <div class="feature reverse">
+            <div class="feature-text">
+                <span class="tag">Wizyty</span>
+                <h3>Obsługa wizyty od zapisu do rozliczenia</h3>
+                <p>
+                    Wizyta przechodzi przez statusy: zaplanowana, potwierdzona, zrealizowana
+                    albo odwołana. Osoba masująca trafia do wizyty dopiero przy oznaczeniu jej
+                    jako zrealizowanej — i jest to ta osoba, która dyżurowała w gabinecie
+                    w chwili rozpoczęcia zabiegu.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Formularz wizyty</strong> z czasem trwania, przerwą, gabinetem, notatką administracyjną i znacznikami faktury.</li>
+                    <li><strong>Odwołanie z powodem</strong> i polem „nieobecność pacjenta”, które zasila rejestr nieobecności.</li>
+                    <li><strong>Zbiorcze oznaczanie</strong> wizyt slotu jako zrealizowanych po jego zakończeniu.</li>
+                    <li><strong>Lista do obdzwonienia</strong> — wizyty niepotwierdzone z wybranego dnia, razem z telefonami; potwierdzenie wprost na liście.</li>
+                    <li><strong>Faktury</strong> — program ich nie wystawia, ale pilnuje, których pacjent jeszcze nie odebrał.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Wizyty do obdzwonienia</span></div>
+                    <img src="assets/img/screens/pl/call-list.png" alt="Lista wizyt do obdzwonienia z telefonami pacjentów" loading="lazy" width="860" height="560">
+                </div>
+                <figcaption>Lista wizyt do obdzwonienia — dzień wcześniej, z telefonem przy każdej pozycji.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 5. czas pracy -->
+        <div class="feature">
+            <div class="feature-text">
+                <span class="tag">Czas pracy</span>
+                <h3>Obsada gabinetów i ewidencja godzin</h3>
+                <p>
+                    Naliczanie zaczyna się w chwili rozpoczęcia slotu, a kończy przy jego
+                    zamknięciu — ręcznym albo automatycznym. Każda zmiana obsady zamyka jeden
+                    wpis i otwiera następny, więc ewidencja opisuje obecność w gabinecie,
+                    a nie plan.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Podpowiedź obsady</strong> z ostatniego obsadzonego dnia albo z tego samego dnia tygodnia — do zatwierdzenia, nie do zgadywania.</li>
+                    <li><strong>Zastępstwa i przeniesienia</strong> obsady między gabinetami, z jedną godziną graniczną i bez dziur w ewidencji.</li>
+                    <li><strong>Korekty i wpisy ręczne</strong> — każdy oznaczony, z zachowaniem godzin pierwotnych.</li>
+                    <li><strong>Podsumowanie</strong> per osoba: dni, obsadzone sloty, suma godzin i godzin lekcyjnych.</li>
+                    <li><strong>Eksport do CSV</strong> oraz wydruk karty czasu pracy i zestawienia zbiorczego.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Ewidencja czasu pracy</span></div>
+                    <img src="assets/img/screens/pl/worktime.png" alt="Okno ewidencji czasu pracy z wpisami i sumą okresu" loading="lazy" width="1080" height="660">
+                </div>
+                <figcaption>Ewidencja czasu pracy — wpisy, oznaczenia korekt i suma zakresu.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 6. wydruki -->
+        <div class="feature reverse">
+            <div class="feature-text">
+                <span class="tag">Wydruki</span>
+                <h3>Raporty na papier, do PDF albo dla pacjenta</h3>
+                <p>
+                    Wszystkie wydruki zbiera jedno menu i jedno okno wydruku: papier,
+                    orientacja, skalowanie, rozmiar czcionki, zakres dat i podgląd strona po
+                    stronie. Ustawienia zapamiętywane są osobno dla każdego rodzaju raportu.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Terminarz pacjenta</strong> — karteczka z datami i godzinami, bez gabinetu, osoby masującej i uwag; mieści się na A6.</li>
+                    <li><strong>Karta czasu pracy</strong> jednej osoby i <strong>zbiorcze zestawienie</strong> okresu — do podpisu i rozliczenia.</li>
+                    <li><strong>Dzienny wykaz przyjęć</strong> — zbiorczy albo w podziale na gabinety.</li>
+                    <li><strong>Grafik obsady gabinetów</strong>, <strong>karta pacjenta</strong> i <strong>kalendarz jak pokazany</strong> na ekranie.</li>
+                    <li><strong>Eksport do PDF</strong> dla każdego raportu; wydruki wewnętrzne wyraźnie oznaczone.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Wydruk — dzienny wykaz przyjęć</span></div>
+                    <img src="assets/img/screens/pl/print-dialog.png" alt="Okno wydruku z podglądem dziennego wykazu przyjęć" loading="lazy" width="1080" height="660">
+                </div>
+                <figcaption>Okno wydruku z podglądem — te same ustawienia dla każdego raportu.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 7. słowniki i konfiguracja -->
+        <div class="feature">
+            <div class="feature-text">
+                <span class="tag">Ustawienia</span>
+                <h3>Słowniki i konfiguracja przychodni</h3>
+                <p>
+                    Program nie narzuca sztywnych liczb: liczbę gabinetów, ich nazwy, sloty
+                    domyślne każdego dnia tygodnia, listę zabiegów i osób masujących ustala
+                    przychodnia.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Osoby masujące</strong> z kolorem w kalendarzu, telefonem, stanem aktywności i nieobecnościami (urlop, L4).</li>
+                    <li><strong>Zabiegi</strong> z czasem trwania, skrótem i ceną informacyjną.</li>
+                    <li><strong>Konfiguracja w siedmiu zakładkach</strong> z polem wyszukiwania ustawienia — od danych przychodni po kolory statusów i zasady bezpieczeństwa.</li>
+                    <li><strong>Wygląd</strong> — motyw jasny, ciemny albo zgodny z systemem, styl widżetów i język interfejsu (polski lub angielski).</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Konfiguracja — zakładka Wygląd</span></div>
+                    <img src="assets/img/screens/pl/settings-appearance.png" alt="Okno konfiguracji, zakładka wyglądu z kolorami statusów i wyborem języka" loading="lazy" width="1192" height="757">
+                </div>
+                <figcaption>Konfiguracja — skala kalendarza, kolory statusów, motyw i język.</figcaption>
+            </figure>
+        </div>
+
+        <!-- 8. bezpieczeństwo -->
+        <div class="feature reverse">
+            <div class="feature-text">
+                <span class="tag coral">Dane i bezpieczeństwo</span>
+                <h3>Kopie zapasowe, dziennik zmian i RODO</h3>
+                <p>
+                    Dane leżą w plikach XML w katalogu danych — bez bazy SQL i bez serwera.
+                    Program sam dba o kopie i o to, żeby dało się odpowiedzieć na pytanie
+                    „kto to zrobił?”.
+                </p>
+                <ul class="feature-list">
+                    <li><strong>Kopie zapasowe</strong> automatycznie przy starcie, cyklicznie w trakcie pracy i — jeżeli tak ustawiono — przy zamknięciu; odtwarzanie z listy kopii, z kopią stanu bieżącego przed odtworzeniem.</li>
+                    <li><strong>Dziennik zmian</strong> — data, użytkownik, rodzaj operacji i rekord, z filtrowaniem; bez wartości sprzed zmiany, żeby nie powstał drugi zbiór danych pacjentów.</li>
+                    <li><strong>Konta użytkowników</strong> z opcjonalnym hasłem — służą podpisaniu operacji autorem, nie ochronie dostępu.</li>
+                    <li><strong>Blokada ekranu</strong> na skrót <kbd>Ctrl</kbd>+<kbd>L</kbd> i po czasie bezczynności.</li>
+                    <li><strong>RODO</strong> — przeciwwskazania traktowane jak dane szczególnej kategorii, anonimizacja pacjenta i osoby masującej, brak danych pacjentów poza katalogiem danych i kopiami.</li>
+                </ul>
+            </div>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Dziennik zmian</span></div>
+                    <img src="assets/img/screens/pl/changelog.png" alt="Okno dziennika zmian z filtrami i listą operacji" loading="lazy" width="1184" height="560">
+                </div>
+                <figcaption>Dziennik zmian — kto, kiedy i jaką operację wykonał.</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------------------------------------------ galeria -- -->
+<section class="section" id="galeria">
+    <div class="wrap">
+        <div class="section-head center">
+            <span class="kicker">Galeria</span>
+            <h2>Pozostałe okna programu</h2>
+            <p>Kliknij zrzut, aby obejrzeć go w pełnym rozmiarze.</p>
+        </div>
+
+        <div class="gallery">
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/calendar-week.png" alt="Widok tygodnia z wieloma dniami i gabinetami" loading="lazy">
+                </div>
+                <figcaption>Widok tygodnia — pięć dni i komplet gabinetów naraz.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/appointment.png" alt="Formularz wizyty z ostrzeżeniem o pacjencie niezaufanym" loading="lazy">
+                </div>
+                <figcaption>Formularz wizyty — statusy, notatka i znaczniki faktury.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/patient-card.png" alt="Karta pacjenta z danymi osobowymi i uwagami" loading="lazy">
+                </div>
+                <figcaption>Karta pacjenta — dane, adres i uwagi administracyjne.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/worktime-summary.png" alt="Podsumowanie czasu pracy per osoba masująca" loading="lazy">
+                </div>
+                <figcaption>Podsumowanie ewidencji — dni, sloty i suma godzin.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/therapists.png" alt="Słownik osób masujących" loading="lazy">
+                </div>
+                <figcaption>Słownik osób masujących — kolor w kalendarzu i stan.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/menu-reports.png" alt="Rozwinięte menu Raporty w oknie głównym" loading="lazy">
+                </div>
+                <figcaption>Menu Raporty — wszystkie wydruki w jednym miejscu.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/settings.png" alt="Okno konfiguracji, zakładka Przychodnia" loading="lazy">
+                </div>
+                <figcaption>Konfiguracja — dane przychodni, sloty domyślne i gabinety.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/help.png" alt="Wbudowana pomoc programu" loading="lazy">
+                </div>
+                <figcaption>Wbudowana pomoc — spis tematów i wyszukiwanie.</figcaption>
+            </figure>
+            <figure>
+                <div class="shot-frame">
+                    <img src="assets/img/screens/pl/login.png" alt="Okno logowania z listą kont" loading="lazy">
+                </div>
+                <figcaption>Logowanie — konto wskazuje autora operacji.</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- --------------------------------------------------------- pobieranie -- -->
+<section class="section section-alt" id="pobieranie">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="kicker">Pobieranie</span>
+            <h2>Instalacja to rozpakowanie archiwum</h2>
+            <p>
+                Wydania publikowane są w GitHub Releases jako archiwa ZIP — osobno dla Windows
+                i dla Linuksa. Nie ma instalatora, nie trzeba uprawnień administratora, a program
+                działa w dowolnym katalogu z prawem zapisu.
+            </p>
+        </div>
+
+        <div class="download-grid">
+            <div class="download-card">
+                <h3>Najnowsze wydanie</h3>
+                <p class="muted small">Bieżąca wersja: <strong>1.3.0</strong></p>
+                <a class="btn btn-solid" href="https://github.com/krzysztofkaczor84/clinic/releases/latest">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                    Przejdź do wydań na GitHubie
+                </a>
+                <ul class="platform-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4v7.5H3V5.5Zm0 13L10.5 20v-7.5H3v6ZM11.5 3.8 21 2v9.5h-9.5V3.8Zm0 16.4L21 22v-9.5h-9.5v7.7Z"/></svg>
+                        <span><b>Windows 10 / 11 · 64-bit</b><span>Archiwum ZIP z bibliotekami Qt i pakietem uruchomieniowym MSVC</span></span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        <span><b>Linux · 64-bit</b><span>Zbudowane na Ubuntu 22.04; HTTPS korzysta z systemowego OpenSSL 3</span></span>
+                    </li>
+                </ul>
+                <p class="small muted mt-m mb-0">
+                    W archiwum: program <code>clinic</code>, program aktualizujący, biblioteki Qt,
+                    tłumaczenia, podręcznik <code>doc/clinic-manual.pdf</code> oraz katalog
+                    <code>licenses/</code> z treścią licencji komponentów.
+                </p>
+            </div>
+
+            <div class="download-card">
+                <h3>Pierwsze uruchomienie</h3>
+                <ol class="steps">
+                    <li><strong>Rozpakuj archiwum</strong> w katalogu, w którym program może zapisywać — np. <code>C:\clinic</code> albo katalog domowy.</li>
+                    <li><strong>Uruchom <code>clinic</code></strong>. Przy pierwszym starcie program poprosi o klucz licencji; bez niego uruchomi się w trybie tylko do odczytu.</li>
+                    <li><strong>Zaloguj się</strong> dowolną nazwą — konto powstaje od razu i od tej chwili podpisuje wykonywane operacje.</li>
+                    <li><strong>Ustaw przychodnię</strong> — nazwę, gabinety i domyślne sloty w oknie konfiguracji, a potem wpisz osoby masujące i zabiegi.</li>
+                    <li><strong>Utwórz grafik miesiąca</strong> (menu <em>Grafik</em>) i zacznij zapisywać wizyty.</li>
+                </ol>
+                <div class="notice info">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg>
+                    <p>
+                        <strong>Aktualizacje są wbudowane.</strong> Program sprawdza podpisany
+                        manifest, pobiera archiwum, weryfikuje jego sumę kontrolną i instaluje
+                        je osobnym programem aktualizującym — po wykonaniu kopii zapasowej
+                        i z możliwością przywrócenia poprzedniej wersji. Dane przychodni,
+                        ustawienia i licencja zostają nietknięte.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="split mt-l">
+            <div class="card">
+                <h3>Wymagania</h3>
+                <ul>
+                    <li>Windows 10 lub 11 w wersji 64-bitowej albo 64-bitowy Linux (glibc 2.35+, np. Ubuntu 22.04 i nowsze).</li>
+                    <li>Ekran co najmniej 1366 × 768; program obsługuje skalowanie HiDPI.</li>
+                    <li>Miejsce na dane i kopie zapasowe — kilkadziesiąt MB przy typowym wolumenie.</li>
+                    <li>Połączenie z internetem wyłącznie do pobrania licencji i aktualizacji; praca bez sieci jest możliwa dzięki kopii offline licencji.</li>
+                    <li>Brak wymagań serwerowych — żadnej bazy danych ani usługi w tle.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Co nowego w 1.3.0</h3>
+                <ul>
+                    <li><strong>Zastępstwa</strong> w nagłówku obsady — osoba zastąpiona zostaje widoczna, a jej czas pracy w tym gabinecie wynosi zero.</li>
+                    <li><strong>Wybór gabinetu</strong> przy każdym znalezionym terminie w oknie umawiania wizyt.</li>
+                    <li><strong>Filtr osoby masującej</strong> przy wyszukiwaniu wolnych terminów.</li>
+                    <li><strong>Styl widżetów</strong> do wyboru w konfiguracji, obok motywu i języka.</li>
+                    <li>Poprawki w menu kontekstowych kalendarza i w przenoszeniu obsady między gabinetami.</li>
+                </ul>
+                <p class="small muted mb-0">Pełna lista zmian znajduje się w opisie wydania na GitHubie.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ----------------------------------------------------------- licencja -- -->
+<section class="section" id="licencja">
+    <div class="wrap">
+        <div class="section-head">
+            <span class="kicker">Licencjonowanie</span>
+            <h2>Licencja programu i komponenty stron trzecich</h2>
+            <p>
+                Program jest oprogramowaniem komercyjnym autora i wymaga ważnej licencji do
+                pełnej pracy. Osobną sprawą są biblioteki, z których korzysta — ich licencje
+                dołączone są do każdego wydania.
+            </p>
+        </div>
+
+        <div class="split">
+            <div class="card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                </div>
+                <h3>Licencja aplikacji</h3>
+                <p>
+                    Licencja to <strong>podpisany cyfrowo plik</strong> (Ed25519), pobierany
+                    z serwera licencji przez HTTPS przy każdym starcie i przechowywany na
+                    stanowisku jako kopia offline. Określa licencjobiorcę, edycję, okres
+                    ważności i <strong>komputer</strong>, na którym program ma działać.
+                </p>
+                <ul>
+                    <li><strong>Jedna licencja = jeden komputer.</strong> Identyfikator komputera wyliczany jest przy starcie i nigdzie nie jest zapisywany.</li>
+                    <li><strong>Praca bez sieci</strong> jest możliwa — program korzysta wtedy z kopii offline licencji.</li>
+                    <li><strong>Bez ważnej licencji</strong> program uruchamia się w <strong>trybie tylko do odczytu</strong>: dane można przeglądać, drukować, eksportować i archiwizować, ale nie zmieniać.</li>
+                    <li><strong>Aktualizacje działają niezależnie</strong> od stanu licencji.</li>
+                    <li>Wymiana komputera oznacza wystawienie licencji na nowy identyfikator.</li>
+                </ul>
+                <div class="notice mt-m">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16v12H4zM4 7l8 6 8-6"/></svg>
+                    <p>
+                        <strong>Jak uzyskać licencję:</strong> otwórz okno <em>Pomoc → O programie</em>,
+                        skopiuj przyciskiem <em>identyfikator komputera</em> i wyślij go na adres
+                        <a href="mailto:krzysztof.kaczor.84@gmail.com">krzysztof.kaczor.84@gmail.com</a>.
+                        W odpowiedzi otrzymasz klucz licencji, który wpisuje się w programie raz.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-icon coral">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.4 8 9 4.6-.6 8-4.6 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <h3>Komponenty stron trzecich</h3>
+                <p>
+                    Poza Qt i biblioteką standardową C++ program nie korzysta z żadnych
+                    zewnętrznych bibliotek. Teksty licencji wchodzą do archiwum wydania
+                    (katalog <code>licenses/</code>) i wymienia je okno „O programie”.
+                </p>
+                <div class="table-wrap mt-m">
+                    <table>
+                        <thead>
+                            <tr><th>Komponent</th><th>Licencja</th><th>Uwagi</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Qt 6.11</td>
+                                <td>LGPL v3</td>
+                                <td>Biblioteki linkowane <strong>dynamicznie</strong>, aby odbiorca mógł podmienić je na własne zbudowanie</td>
+                            </tr>
+                            <tr>
+                                <td>Monocypher 4.0.2</td>
+                                <td>CC0 1.0 / BSD 2-Clause</td>
+                                <td>Weryfikacja podpisów licencji i manifestu aktualizacji</td>
+                            </tr>
+                            <tr>
+                                <td>OpenSSL 3 (Linux)</td>
+                                <td>Apache 2.0</td>
+                                <td>Biblioteka systemowa, nie jest dołączana do archiwum</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="small muted mt-m mb-0">
+                    Treść licencji Qt jest też dostępna pod adresem
+                    <a href="https://www.qt.io/licensing" rel="noopener">qt.io/licensing</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="split mt-l">
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>O programie</span></div>
+                    <img src="assets/img/screens/pl/about.png" alt="Okno O programie z wersją, kontaktem, notą Qt LGPL i identyfikatorem komputera" loading="lazy">
+                </div>
+                <figcaption>Okno „O programie” — wersja, nota Qt LGPL i identyfikator komputera.</figcaption>
+            </figure>
+            <figure class="shot">
+                <div class="shot-frame">
+                    <div class="bar"><i></i><i></i><i></i><span>Licencja</span></div>
+                    <img src="assets/img/screens/pl/license.png" alt="Okno licencji z licencjobiorcą, edycją, okresem ważności i stanem sprawdzenia" loading="lazy">
+                </div>
+                <figcaption>Okno licencji — stan licencji i data ostatniego sprawdzenia online.</figcaption>
+            </figure>
+        </div>
+
+        <div class="notice info mt-l">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg>
+            <p>
+                <strong>Dane pacjentów zostają na stanowisku.</strong> Jedyne połączenia sieciowe
+                programu to pobranie pliku licencji i sprawdzenie aktualizacji. Żaden zapis
+                kartoteki, grafiku ani ewidencji nie jest nigdzie wysyłany. Za ochronę samego
+                komputera odpowiada wdrożenie: hasło do konta systemowego oraz szyfrowanie dysku
+                i nośnika kopii zapasowych.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ------------------------------------------------------------- kontakt -- -->
+<section class="section section-alt" id="kontakt">
+    <div class="wrap">
+        <div class="section-head center">
+            <span class="kicker">Kontakt</span>
+            <h2>Pytania, licencje, zgłoszenia</h2>
+        </div>
+        <div class="contact-card">
+            <img src="assets/img/clinic-icon-256.png" alt="">
+            <div>
+                <h3>Krzysztof Kaczor — autor programu</h3>
+                <p>
+                    Licencje, pytania o wdrożenie, zgłoszenia błędów i propozycje zmian
+                    najszybciej trafią na adres poniżej. Przy zgłoszeniu błędu pomaga przycisk
+                    <em>„Kopiuj dane diagnostyczne”</em> z okna „O programie”.
+                </p>
+                <a class="mail-link" href="mailto:krzysztof.kaczor.84@gmail.com">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    krzysztof.kaczor.84@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <figure class="shot mt-l" style="max-width:700px;margin-left:auto;margin-right:auto">
+            <div class="shot-frame">
+                <img src="assets/img/screens/pl/splash.png" alt="Ekran powitalny programu clinic" loading="lazy">
+            </div>
+            <figcaption class="center">Ekran powitalny programu przy uruchomieniu.</figcaption>
+        </figure>
+    </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <h4>clinic</h4>
+                <p class="mb-0">
+                    Program do prowadzenia grafiku, kartoteki pacjentów i ewidencji czasu pracy
+                    w przychodni masażu leczniczego. Wersja 1.3.0.
+                </p>
+            </div>
+            <div>
+                <h4>Odnośniki</h4>
+                <ul>
+                    <li><a href="https://github.com/krzysztofkaczor84/clinic/releases/latest">Najnowsze wydanie</a></li>
+                    <li><a href="#licencja">Licencjonowanie</a></li>
+                    <li><a href="#pobieranie">Wymagania i instalacja</a></li>
+                    <li><a href="en/" hreflang="en" lang="en">English version</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Kontakt</h4>
+                <ul>
+                    <li>Krzysztof Kaczor</li>
+                    <li><a href="mailto:krzysztof.kaczor.84@gmail.com">krzysztof.kaczor.84@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Krzysztof Kaczor. Wszystkie prawa zastrzeżone.</span>
+            <span>Qt 6 na licencji LGPL v3 · Monocypher na licencji CC0 / BSD 2-Clause</span>
+        </div>
+    </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Powiększony zrzut ekranu">
+    <button class="lightbox-close" type="button" aria-label="Zamknij">×</button>
+    <figure>
+        <img alt="">
+        <figcaption></figcaption>
+    </figure>
+</div>
+
+<script src="assets/js/site.js"></script>
 </body>
 </html>

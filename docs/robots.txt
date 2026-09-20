@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krzysztofkaczor84.github.io/clinic/sitemap.xml
