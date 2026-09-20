@@ -368,7 +368,7 @@
                 <ul class="feature-list">
                     <li><strong>Kopie zapasowe</strong> automatycznie przy starcie, cyklicznie w trakcie pracy i — jeżeli tak ustawiono — przy zamknięciu; odtwarzanie z listy kopii, z kopią stanu bieżącego przed odtworzeniem.</li>
                     <li><strong>Dziennik zmian</strong> — data, użytkownik, rodzaj operacji i rekord, z filtrowaniem; bez wartości sprzed zmiany, żeby nie powstał drugi zbiór danych pacjentów.</li>
-                    <li><strong>Konta użytkowników</strong> z opcjonalnym hasłem — służą podpisaniu operacji autorem, nie ochronie dostępu.</li>
+                    <li><strong>Konta użytkowników</strong> podpisują autorem każdą operację. Domyślnie nie chronią dostępu, ale przychodnia może zamknąć zakładanie kont z okna logowania i wymagać hasła od każdego konta — wtedy do programu wchodzi się wyłącznie na istniejące konto i z jego hasłem. Plików z danymi nie chroni to nadal: tym zajmuje się zabezpieczenie stanowiska.</li>
                     <li><strong>Blokada ekranu</strong> na skrót <kbd>Ctrl</kbd>+<kbd>L</kbd> i po czasie bezczynności.</li>
                     <li><strong>RODO</strong> — przeciwwskazania traktowane jak dane szczególnej kategorii, anonimizacja pacjenta i osoby masującej, brak danych pacjentów poza katalogiem danych i kopiami.</li>
                 </ul>
@@ -444,7 +444,7 @@
             </figure>
             <figure>
                 <div class="shot-frame">
-                    <img src="assets/img/screens/pl/login.png" alt="Okno logowania z listą kont" loading="lazy">
+                    <img src="assets/img/screens/pl/login.png" alt="Okno logowania z polem konta i polem hasła" loading="lazy">
                 </div>
                 <figcaption>Logowanie — konto wskazuje autora operacji.</figcaption>
             </figure>

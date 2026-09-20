@@ -369,7 +369,7 @@
                 <ul class="feature-list">
                     <li><strong>Backups</strong> automatically at start, periodically during work and — when set so — on exit; restoring from a list of copies, with a copy of the current state taken first.</li>
                     <li><strong>The change log</strong> — date, user, kind of operation and record, with filters; it never holds the value from before a change, so that a second set of patient data cannot arise.</li>
-                    <li><strong>User accounts</strong> with an optional password — they attribute operations to a person rather than guard access.</li>
+                    <li><strong>User accounts</strong> sign every operation with its author. By default they guard no access, but the clinic can close account creation in the sign-in window and require a password of every account — the way in is then an existing account and its password. The data files themselves stay for the workstation to protect.</li>
                     <li><strong>A screen lock</strong> on <kbd>Ctrl</kbd>+<kbd>L</kbd> and after a period of inactivity.</li>
                     <li><strong>GDPR</strong> — contraindications treated as a special category of data, anonymisation of a patient and of a therapist, and no patient data outside the data directory and its backups.</li>
                 </ul>
@@ -445,7 +445,7 @@
             </figure>
             <figure>
                 <div class="shot-frame">
-                    <img src="../assets/img/screens/en/login.png" alt="The sign-in window with the list of accounts" loading="lazy">
+                    <img src="../assets/img/screens/en/login.png" alt="The sign-in window with the account and password fields" loading="lazy">
                 </div>
                 <figcaption>Signing in — the account names the author of every operation.</figcaption>
             </figure>
