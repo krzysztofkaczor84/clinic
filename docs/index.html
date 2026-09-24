@@ -54,7 +54,7 @@
     <div class="wrap">
         <div class="hero-grid">
             <div>
-                <span class="eyebrow">Wersja 1.4.0 · Windows i Linux</span>
+                <span class="eyebrow">Wersja 1.6.0 · Windows i Linux</span>
                 <h1>Grafik i kartoteka przychodni masażu leczniczego</h1>
                 <p class="lede">
                     <strong>clinic</strong> to program na stanowisko rejestracji: prowadzi grafik
@@ -127,8 +127,8 @@
                 <p>
                     Wyszukiwanie po dowolnym fragmencie danych, dziennik przeciwwskazań,
                     rejestr nieobecności nieusprawiedliwionych i uwagi ostrzegawcze — widoczne
-                    zanim wizyta zostanie zapisana. Historia wizyt i szybkie umówienie kolejnej
-                    wprost z karty pacjenta.
+                    zanim wizyta zostanie zapisana. Wizyty ze stanem faktury i szybkie umówienie
+                    kolejnej wprost z karty pacjenta.
                 </p>
             </article>
             <article class="card">
@@ -179,7 +179,7 @@
                 <ul class="feature-list">
                     <li><strong>Trzy zakresy widoku</strong> — dzień, kilka dni (2–6) i tydzień (5 albo 7 dni), przełączane jednym kliknięciem lub skrótem.</li>
                     <li><strong>Nagłówek obsady</strong> nad każdym gabinetem wymienia wszystkie osoby dyżurujące w slocie; zakończone dyżury są przekreślone, a kolor pochodzi ze słownika osób.</li>
-                    <li><strong>Kafelek wizyty</strong> pokazuje godzinę, pacjenta i zabieg, a po realizacji także osobę masującą; kolor zależy od statusu, przerwa po zabiegu rysowana jest osobnym paskiem.</li>
+                    <li><strong>Kafelek wizyty</strong> pokazuje godzinę, pacjenta i zabieg, a po realizacji także osobę masującą; kolor i przezroczystość zależą od statusu, ikonka w rogu mówi o fakturze, przerwa po zabiegu rysowana jest osobnym paskiem.</li>
                     <li><strong>Praca myszą</strong> — zaznaczenie pustego miejsca tworzy wizytę, przeciągnięcie przenosi ją między godzinami, gabinetami i dniami, a dolna krawędź zmienia czas trwania.</li>
                     <li><strong>Filtry i skalowanie</strong> — ukrywanie statusów i gabinetów, powiększanie w pionie i w poziomie, wydruk dokładnie tego, co widać.</li>
                 </ul>
@@ -205,6 +205,7 @@
                 </p>
                 <ul class="feature-list">
                     <li><strong>Seria wizyt</strong> — licznik „zaznaczono k z N” pilnuje, by pacjent wyszedł z kompletem terminów, a kolizje z jego innymi wizytami blokowane są od razu.</li>
+                    <li><strong>Horyzont albo data graniczna</strong> — wyszukiwanie sięga podaną liczbę dni naprzód albo do wybranego w kalendarzu dnia; okno pamięta ostatni wybór i ostatnią datę.</li>
                     <li><strong>Wolne gabinety przy każdym terminie</strong> — można zdać się na automatyczny przydział albo wskazać gabinet ręcznie.</li>
                     <li><strong>Kryterium osoby masującej</strong> — gdy pacjent prosi o kogoś konkretnego, wynik zawęża się do gabinetów obsadzonych przez wskazane osoby.</li>
                     <li><strong>Ostrzeżenia przed zapisem</strong> — przeciwwskazania pacjenta, oznaczenie niezaufania i miesiące bez utworzonego grafiku.</li>
@@ -227,22 +228,23 @@
                 <p>
                     Karta pacjenta zbiera dane osobowe i adresowe, uwagi administracyjne,
                     dziennik przeciwwskazań, skierowania i zgody, rejestr nieobecności oraz
-                    pełną historię wizyt.
+                    pełną listę wizyt ze stanem faktury każdej z nich.
                 </p>
                 <ul class="feature-list">
                     <li><strong>Jedno pole wyszukiwania</strong> — imię, nazwisko, numer kartoteki, PESEL, telefon, e-mail lub adres; dopasowanie niewrażliwe na wielkość liter i polskie znaki.</li>
                     <li><strong>Przeciwwskazania jako dziennik</strong> — kolejne wpisy z datą, bez nadpisywania wcześniejszych, z ostrzeżeniem widocznym już przy wyborze pacjenta.</li>
                     <li><strong>Zaufanie pacjenta</strong> — nieobecności nieusprawiedliwione zliczane do progu; pacjent niezaufany oznaczany kolorem i znakiem „(!)” wszędzie, gdzie się pojawia.</li>
+                    <li><strong>Wizyty i faktury w jednym miejscu</strong> — zakładka „Wizyty” podaje przy każdej wizycie osobę masującą i stan faktury: nie, tak albo odebrana; dwukrotne kliknięcie otwiera formularz wizyty.</li>
                     <li><strong>Anonimizacja na żądanie (RODO)</strong> — dane osobowe znikają, a numer kartoteki i historia wizyt zostają.</li>
                     <li><strong>Numer kartoteki</strong> nadawany automatycznie i nigdy nieużywany powtórnie.</li>
                 </ul>
             </div>
             <figure class="shot">
                 <div class="shot-frame">
-                    <div class="bar"><i></i><i></i><i></i><span>Karta pacjenta — historia wizyt</span></div>
-                    <img src="assets/img/screens/pl/patient-history.png" alt="Karta pacjenta z zakładką historii wizyt" loading="lazy" width="1100" height="540">
+                    <div class="bar"><i></i><i></i><i></i><span>Karta pacjenta — wizyty</span></div>
+                    <img src="assets/img/screens/pl/patient-history.png" alt="Karta pacjenta z zakładką wizyt i kolumną faktury" loading="lazy" width="1100" height="540">
                 </div>
-                <figcaption>Karta pacjenta — zakładki kartoteki, przeciwwskazań, nieobecności i historii wizyt.</figcaption>
+                <figcaption>Karta pacjenta — zakładki kartoteki, przeciwwskazań, nieobecności i wizyt, ze stanem faktury przy każdej wizycie.</figcaption>
             </figure>
         </div>
 
@@ -259,6 +261,7 @@
                 </p>
                 <ul class="feature-list">
                     <li><strong>Formularz wizyty</strong> z czasem trwania, przerwą, gabinetem, notatką administracyjną i znacznikami faktury.</li>
+                    <li><strong>Dowolna zmiana statusu</strong> — z każdego na każdy inny, w każdym slocie; wizytę odwołaną da się przywrócić, dopóki jej termin jest wolny.</li>
                     <li><strong>Odwołanie z powodem</strong> i polem „nieobecność pacjenta”, które zasila rejestr nieobecności.</li>
                     <li><strong>Zbiorcze oznaczanie</strong> wizyt slotu jako zrealizowanych po jego zakończeniu.</li>
                     <li><strong>Lista do obdzwonienia</strong> — wizyty niepotwierdzone z wybranego dnia, razem z telefonami; potwierdzenie wprost na liście.</li>
@@ -342,16 +345,17 @@
                 <ul class="feature-list">
                     <li><strong>Osoby masujące</strong> z kolorem w kalendarzu, telefonem, stanem aktywności i nieobecnościami (urlop, L4).</li>
                     <li><strong>Zabiegi</strong> z czasem trwania, skrótem i ceną informacyjną.</li>
-                    <li><strong>Konfiguracja w siedmiu zakładkach</strong> z polem wyszukiwania ustawienia — od danych przychodni po kolory statusów i zasady bezpieczeństwa.</li>
-                    <li><strong>Wygląd</strong> — motyw jasny, ciemny albo zgodny z systemem, styl widżetów i język interfejsu (polski lub angielski).</li>
+                    <li><strong>Konfiguracja w ośmiu zakładkach</strong> z polem wyszukiwania ustawienia — od danych przychodni po kolory statusów i zasady bezpieczeństwa.</li>
+                    <li><strong>Kalendarz</strong> — skala i zakres startowy, podziałka pomocnicza oraz kolor, rozmiar tekstu i wysokość trzech nagłówków siatki; wyższy pasek zawija długie nazwy, nie powiększając liter.</li>
+                    <li><strong>Wygląd</strong> — motyw jasny, ciemny albo zgodny z systemem, styl widżetów, język interfejsu (polski lub angielski) oraz kolory i przezroczystość kafelków, kolory oznaczeń pacjenta i ikonek faktury.</li>
                 </ul>
             </div>
             <figure class="shot">
                 <div class="shot-frame">
                     <div class="bar"><i></i><i></i><i></i><span>Konfiguracja — zakładka Wygląd</span></div>
-                    <img src="assets/img/screens/pl/settings-appearance.png" alt="Okno konfiguracji, zakładka wyglądu z kolorami statusów i wyborem języka" loading="lazy" width="1192" height="757">
+                    <img src="assets/img/screens/pl/settings-appearance.png" alt="Okno konfiguracji, zakładka wyglądu z kolorami statusów, oznaczeń i faktury" loading="lazy" width="1192" height="757">
                 </div>
-                <figcaption>Konfiguracja — skala kalendarza, kolory statusów, motyw i język.</figcaption>
+                <figcaption>Konfiguracja — motyw, styl, język oraz kolory statusów, oznaczeń pacjenta i faktury.</figcaption>
             </figure>
         </div>
 
@@ -468,7 +472,7 @@
         <div class="download-grid">
             <div class="download-card">
                 <h3>Najnowsze wydanie</h3>
-                <p class="muted small">Bieżąca wersja: <strong>1.4.0</strong></p>
+                <p class="muted small">Bieżąca wersja: <strong>1.6.0</strong></p>
                 <a class="btn btn-solid" href="https://github.com/krzysztofkaczor84/clinic/releases/latest">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
                     Przejdź do wydań na GitHubie
@@ -524,13 +528,18 @@
                 </ul>
             </div>
             <div class="card">
-                <h3>Co nowego w 1.4.0</h3>
+                <h3>Co nowego w 1.6.0</h3>
                 <ul>
-                    <li><strong>Zastępstwa</strong> w nagłówku obsady — osoba zastąpiona zostaje widoczna, a jej czas pracy w tym gabinecie wynosi zero.</li>
-                    <li><strong>Wybór gabinetu</strong> przy każdym znalezionym terminie w oknie umawiania wizyt.</li>
-                    <li><strong>Filtr osoby masującej</strong> przy wyszukiwaniu wolnych terminów.</li>
-                    <li><strong>Styl widżetów</strong> do wyboru w konfiguracji, obok motywu i języka.</li>
-                    <li>Poprawki w menu kontekstowych kalendarza i w przenoszeniu obsady między gabinetami.</li>
+                    <li>Ustawienia kalendarza mają <strong>własną zakładkę „Kalendarz”</strong> w oknie konfiguracji; w „Wyglądzie” zostało to, czym malowany jest cały program, oraz kolory kafelków i oznaczeń.</li>
+                    <li>Każdy nagłówek siatki ma <strong>wysokość paska osobno od rozmiaru tekstu</strong>: podwyższenie paska daje miejsce na drugi wiersz, a nie większe litery.</li>
+                    <li><strong>Nazwy gabinetów i nazwiska osób masujących są zawijane</strong>, jeżeli pasek ma na to miejsce — zamiast być ucinane wielokropkiem.</li>
+                    <li>Nowe ustawienie <strong>rozmiaru tekstu kafelka</strong> wizyty.</li>
+                    <li><strong>Kolor oznaczenia pacjenta</strong> — niezaufanego albo z uwagą ostrzegawczą — obejmuje teraz całą treść kafelka kalendarza, tak jak oznaczenie na listach.</li>
+                    <li>Stan faktury czyta się z <strong>ikonki w prawym górnym rogu kafelka</strong>, w wierszu godziny: kontur, gdy pacjent czeka na fakturę, wypełniona, gdy ją odebrał. Dopisek „[faktura]” zniknął i zwolnił wiersz treści.</li>
+                    <li><strong>Przezroczystość kafelków i tekstu</strong> — okno wyboru koloru każdego statusu, ikonki faktury i oznaczenia pacjenta ma kanał alfa, a tekst kafelka własną nieprzezroczystość.</li>
+                    <li><strong>Skierowania i zgody na kontakt</strong> dodaje się, edytuje i usuwa na karcie pacjenta; wycofanie zgody zostaje na karcie jako data.</li>
+                    <li><strong>Status wizyty zmienia się na dowolny inny</strong>, w każdym slocie — doszło „Oznacz jako zaplanowaną”, a wizytę odwołaną można przywrócić, dopóki jej termin jest wolny.</li>
+                    <li>Poprawka: <strong>liczba przechowywanych kopii zapasowych</strong> działa od razu po zapisaniu ustawień, bez ponownego uruchamiania programu.</li>
                 </ul>
                 <p class="small muted mb-0">Pełna lista zmian znajduje się w opisie wydania na GitHubie.</p>
             </div>
@@ -693,7 +702,7 @@
                 <h4>clinic</h4>
                 <p class="mb-0">
                     Program do prowadzenia grafiku, kartoteki pacjentów i ewidencji czasu pracy
-                    w przychodni masażu leczniczego. Wersja 1.4.0.
+                    w przychodni masażu leczniczego. Wersja 1.6.0.
                 </p>
             </div>
             <div>

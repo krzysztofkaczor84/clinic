@@ -54,7 +54,7 @@
     <div class="wrap">
         <div class="hero-grid">
             <div>
-                <span class="eyebrow">Version 1.4.0 · Windows and Linux</span>
+                <span class="eyebrow">Version 1.6.0 · Windows and Linux</span>
                 <h1>Schedule and patient records for a massage therapy clinic</h1>
                 <p class="lede">
                     <strong>clinic</strong> runs the front desk of a therapeutic massage clinic:
@@ -128,8 +128,8 @@
                 <p>
                     Search by any fragment of any field, a journal of contraindications,
                     a register of unexcused absences and a warning note — all visible before an
-                    appointment is saved. The visit history and a quick booking of the next
-                    appointment sit right in the patient card.
+                    appointment is saved. The appointments with the state of their invoices and
+                    a quick booking of the next one sit right in the patient card.
                 </p>
             </article>
             <article class="card">
@@ -180,7 +180,7 @@
                 <ul class="feature-list">
                     <li><strong>Three spans</strong> — a day, several days (2–6) and a week (5 or 7 days), switched with one click or a shortcut.</li>
                     <li><strong>The staffing heading</strong> above every room names everybody who worked in it during the slot; finished shifts are struck through and the colour comes from the therapist catalogue.</li>
-                    <li><strong>An appointment tile</strong> shows the time, the patient and the treatment, and once completed also the therapist; the colour follows the status and the turnaround is drawn as a separate bar.</li>
+                    <li><strong>An appointment tile</strong> shows the time, the patient and the treatment, and once completed also the therapist; the colour and the opacity follow the status, an icon in the corner tells the invoice, and the turnaround is drawn as a separate bar.</li>
                     <li><strong>Mouse work</strong> — selecting empty space creates an appointment, dragging moves it between hours, rooms and days, and the bottom edge changes its length.</li>
                     <li><strong>Filters and scaling</strong> — hide statuses and rooms, zoom vertically and horizontally, print exactly what is on the screen.</li>
                 </ul>
@@ -207,6 +207,7 @@
                 </p>
                 <ul class="feature-list">
                     <li><strong>A series of appointments</strong> — the “ticked k of N” counter makes sure the patient leaves with a full set, and clashes with their other appointments are blocked as they are ticked.</li>
+                    <li><strong>A horizon or an end date</strong> — the search reaches a number of days ahead or up to a day picked from a calendar; the window remembers the last choice and the last date.</li>
                     <li><strong>Free rooms beside every time</strong> — either leave the choice to the program or pick a room by hand.</li>
                     <li><strong>A therapist criterion</strong> — when the patient asks for somebody in particular, the result narrows down to the rooms those people staff.</li>
                     <li><strong>Warnings before saving</strong> — the patient's contraindications, the untrusted mark and the months that have no schedule yet.</li>
@@ -229,22 +230,23 @@
                 <p>
                     The patient card holds the personal and address data, administrative notes,
                     the journal of contraindications, referrals and consents, the register of
-                    absences and the full visit history.
+                    absences and the full list of appointments with the state of each invoice.
                 </p>
                 <ul class="feature-list">
                     <li><strong>One search field</strong> — first name, surname, record number, national ID, phone, e-mail or address; matching ignores letter case and Polish diacritics.</li>
                     <li><strong>Contraindications as a journal</strong> — dated entries added one after another, never overwritten, with the warning already visible when the patient is picked.</li>
                     <li><strong>Patient trust</strong> — unexcused absences are counted against a threshold; an untrusted patient is marked with a colour and an “(!)” everywhere they appear.</li>
+                    <li><strong>Appointments and invoices in one place</strong> — the “Appointments” tab gives the therapist and the state of the invoice for every appointment: no, yes or collected; a double click opens the appointment form.</li>
                     <li><strong>Anonymisation on request (GDPR)</strong> — the personal data goes, the record number and the visit history stay.</li>
                     <li><strong>The record number</strong> is assigned automatically and never reused.</li>
                 </ul>
             </div>
             <figure class="shot">
                 <div class="shot-frame">
-                    <div class="bar"><i></i><i></i><i></i><span>Patient card — visit history</span></div>
-                    <img src="../assets/img/screens/en/patient-history.png" alt="The patient card with the visit history tab" loading="lazy" width="1100" height="540">
+                    <div class="bar"><i></i><i></i><i></i><span>Patient card — appointments</span></div>
+                    <img src="../assets/img/screens/en/patient-history.png" alt="The patient card with the appointments tab and its invoice column" loading="lazy" width="1100" height="540">
                 </div>
-                <figcaption>The patient card — record, contraindications, absences and visit history.</figcaption>
+                <figcaption>The patient card — record, contraindications, absences and appointments, with the state of the invoice for each.</figcaption>
             </figure>
         </div>
 
@@ -261,6 +263,7 @@
                 </p>
                 <ul class="feature-list">
                     <li><strong>The appointment form</strong> with the length, the turnaround, the room, an administrative note and the invoice markers.</li>
+                    <li><strong>Any change of status</strong> — from every status to every other one, in any slot; a cancelled appointment comes back while its time is still free.</li>
                     <li><strong>Cancelling with a reason</strong> and a “patient did not show up” box that feeds the register of absences.</li>
                     <li><strong>Bulk completion</strong> of a whole slot once it has finished.</li>
                     <li><strong>The call list</strong> — the appointments of a chosen day that nobody has confirmed yet, with phone numbers and confirmation right in the list.</li>
@@ -343,16 +346,17 @@
                 <ul class="feature-list">
                     <li><strong>Therapists</strong> with their calendar colour, phone, active state and absences (holiday, sick leave).</li>
                     <li><strong>Treatments</strong> with a length, a short name and an informative price.</li>
-                    <li><strong>Seven tabs of settings</strong> with a search field over them — from the clinic details to the status colours and the security rules.</li>
-                    <li><strong>Appearance</strong> — a light or dark theme or the one of the system, the widget style and the interface language (Polish or English).</li>
+                    <li><strong>Eight tabs of settings</strong> with a search field over them — from the clinic details to the status colours and the security rules.</li>
+                    <li><strong>Calendar</strong> — the scale and the starting span, the helper lines, and the colour, text size and height of the three headings of the grid; a taller strip wraps a long name instead of enlarging the letters.</li>
+                    <li><strong>Appearance</strong> — a light or dark theme or the one of the system, the widget style, the interface language (Polish or English) and the colours and opacity of the tiles, the colours of the patient markings and of the invoice icons.</li>
                 </ul>
             </div>
             <figure class="shot">
                 <div class="shot-frame">
                     <div class="bar"><i></i><i></i><i></i><span>Settings — the Appearance tab</span></div>
-                    <img src="../assets/img/screens/en/settings-appearance.png" alt="The settings window, appearance tab with status colours and the language choice" loading="lazy" width="1088" height="757">
+                    <img src="../assets/img/screens/en/settings-appearance.png" alt="The settings window, appearance tab with the colours of the statuses, the markings and the invoice" loading="lazy" width="1088" height="757">
                 </div>
-                <figcaption>Settings — calendar scale, status colours, theme and language.</figcaption>
+                <figcaption>Settings — theme, style, language and the colours of the statuses, of the patient markings and of the invoice.</figcaption>
             </figure>
         </div>
 
@@ -469,7 +473,7 @@
         <div class="download-grid">
             <div class="download-card">
                 <h3>The latest release</h3>
-                <p class="muted small">Current version: <strong>1.4.0</strong></p>
+                <p class="muted small">Current version: <strong>1.6.0</strong></p>
                 <a class="btn btn-solid" href="https://github.com/krzysztofkaczor84/clinic/releases/latest">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
                     Go to the releases on GitHub
@@ -526,13 +530,18 @@
                 </ul>
             </div>
             <div class="card">
-                <h3>New in 1.4.0</h3>
+                <h3>New in 1.6.0</h3>
                 <ul>
-                    <li><strong>Substitutions</strong> in the staffing heading — the replaced person stays visible and their working time in that room is zero.</li>
-                    <li><strong>A room to pick</strong> beside every time found in the booking window.</li>
-                    <li><strong>A therapist filter</strong> when searching for free times.</li>
-                    <li><strong>The widget style</strong> can be chosen in the settings, next to the theme and the language.</li>
-                    <li>Fixes in the context menus of the calendar and in moving staffing between rooms.</li>
+                    <li>The settings of the calendar have <strong>a “Calendar” tab of their own</strong>; “Appearance” keeps what the application as a whole is painted in, and the colours of the tiles and the markings.</li>
+                    <li>Every heading of the grid has <strong>a strip height separate from its text size</strong>: making the strip taller buys room for a second line, not larger letters.</li>
+                    <li><strong>Room names and therapists' names are wrapped</strong> where the strip has room for it, instead of being cut off with an ellipsis.</li>
+                    <li>A new setting for <strong>the size of the text on a tile</strong>.</li>
+                    <li><strong>The colour marking a patient</strong> — untrusted, or carrying a warning note — is now what the whole of the calendar tile is written in, exactly as the marking works on the lists.</li>
+                    <li>The state of an invoice is read off <strong>an icon in the top right corner of the tile</strong>, on the line of the time: an outline while the patient waits for it, filled once it has been collected. The “[invoice]” words are gone and have given a line of the tile back.</li>
+                    <li><strong>Tile and text opacity</strong> — the colour picker of every status, of both invoice icons and of the patient markings has an alpha channel, and the tile text an opacity of its own.</li>
+                    <li><strong>Referrals and contact consents</strong> are added, edited and removed on the patient card; a withdrawn consent stays on the card as a date.</li>
+                    <li><strong>The status of an appointment changes to any other one</strong>, in any slot — “Mark as planned” is new, and a cancelled appointment comes back while its time is still free.</li>
+                    <li>Fixed: <strong>the number of backups kept</strong> takes effect as soon as the settings are saved, without restarting the application.</li>
                 </ul>
                 <p class="small muted mb-0">The full list of changes is in the release notes on GitHub.</p>
             </div>
@@ -696,7 +705,7 @@
                 <h4>clinic</h4>
                 <p class="mb-0">
                     An application for the schedule, the patient records and the working time log
-                    of a therapeutic massage clinic. Version 1.4.0.
+                    of a therapeutic massage clinic. Version 1.6.0.
                 </p>
             </div>
             <div>

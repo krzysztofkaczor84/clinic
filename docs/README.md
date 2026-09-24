@@ -54,7 +54,13 @@ w stronach nie jest bezwzględny, więc działa w obu układach.
 - **Zrzuty ekranu** to zwykłe pliki PNG w `assets/img/screens/⟨język⟩/`; podmiana
   pliku o tej samej nazwie wystarcza. Zrzuty pochodzą z wersji 1.4.0 uruchomionej na
   zestawie `data-example` z repozytorium kodu, w interfejsie polskim i angielskim
-  (język wybiera się w konfiguracji, zakładka *Wygląd*).
+  (język wybiera się w konfiguracji, zakładka *Wygląd*). Wyjątki: zakładka „Wizyty”
+  karty pacjenta (`patient-history.png`, pacjentka nr 218) — z wersji 1.5.0; kalendarz
+  i okno konfiguracji (`calendar-day.png`, `calendar-week.png`, `settings.png`,
+  `settings-appearance.png`) — z wersji 1.6.0, która rozdzieliła zakładki „Kalendarz”
+  i „Wygląd”, oznaczyła fakturę ikonką w rogu kafelka, dodała przezroczystość kolorów
+  kafelków i przeniosła kolor oznaczenia pacjenta na kafelek. Kalendarz i zakładka
+  „Wygląd” zrobione 2026-09-24, więc pokazują ten dzień i jego tydzień.
 - **Adres wydań** (`https://github.com/krzysztofkaczor84/clinic/releases/latest`)
   występuje w przyciskach sekcji hero i pobierania oraz w stopce.
 
